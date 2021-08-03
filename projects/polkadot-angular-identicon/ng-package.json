@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/polkadot-angular-identicon",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "jdenticon",
+    "@polkadot/keyring",
+    "@polkadot/ui-settings",
+    "@polkadot/ui-shared",
+    "@polkadot/util",
+    "@polkadot/util-crypto",
+    "color",
+    "@angular/elements"
+  ]
+}
