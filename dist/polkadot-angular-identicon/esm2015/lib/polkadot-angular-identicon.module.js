@@ -1,0 +1,14 @@
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { PolkadotIdentIconComponent } from "./polkadot-angular-identicon.component";
+export class PolkadotIdentIconModule {
+}
+PolkadotIdentIconModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [PolkadotIdentIconComponent],
+                imports: [CommonModule, BrowserModule],
+                exports: [PolkadotIdentIconComponent],
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG9sa2Fkb3QtYW5ndWxhci1pZGVudGljb24ubW9kdWxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvcG9sa2Fkb3QtYW5ndWxhci1pZGVudGljb24vc3JjL2xpYi9wb2xrYWRvdC1hbmd1bGFyLWlkZW50aWNvbi5tb2R1bGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFDO0FBQy9DLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDekMsT0FBTyxFQUFFLGFBQWEsRUFBRSxNQUFNLDJCQUEyQixDQUFDO0FBQzFELE9BQU8sRUFBRSwwQkFBMEIsRUFBRSxNQUFNLHdDQUF3QyxDQUFDO0FBT3BGLE1BQU0sT0FBTyx1QkFBdUI7OztZQUxuQyxRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsMEJBQTBCLENBQUM7Z0JBQzFDLE9BQU8sRUFBRSxDQUFDLFlBQVksRUFBRSxhQUFhLENBQUM7Z0JBQ3RDLE9BQU8sRUFBRSxDQUFDLDBCQUEwQixDQUFDO2FBQ3RDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tbW9uTW9kdWxlIH0gZnJvbSBcIkBhbmd1bGFyL2NvbW1vblwiO1xuaW1wb3J0IHsgTmdNb2R1bGUgfSBmcm9tIFwiQGFuZ3VsYXIvY29yZVwiO1xuaW1wb3J0IHsgQnJvd3Nlck1vZHVsZSB9IGZyb20gXCJAYW5ndWxhci9wbGF0Zm9ybS1icm93c2VyXCI7XG5pbXBvcnQgeyBQb2xrYWRvdElkZW50SWNvbkNvbXBvbmVudCB9IGZyb20gXCIuL3BvbGthZG90LWFuZ3VsYXItaWRlbnRpY29uLmNvbXBvbmVudFwiO1xuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtQb2xrYWRvdElkZW50SWNvbkNvbXBvbmVudF0sXG4gIGltcG9ydHM6IFtDb21tb25Nb2R1bGUsIEJyb3dzZXJNb2R1bGVdLFxuICBleHBvcnRzOiBbUG9sa2Fkb3RJZGVudEljb25Db21wb25lbnRdLFxufSlcbmV4cG9ydCBjbGFzcyBQb2xrYWRvdElkZW50SWNvbk1vZHVsZSB7fVxuIl19
