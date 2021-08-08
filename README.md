@@ -87,5 +87,10 @@ To test the app run the command `ng serve` and open your browser at `localhost:4
 
 You can also type the command `ng serve -o` and it will automatically open the app in your default browser.
 
+## Building & Testing
+
+For those who wants to build or tweak the library see [BUILD.md](BUILD.md) file.
+
+
 Improvements are on the way.
 Happy coding 😎!!!
