@@ -1,16 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PolkadotIdentIconModule } from 'polkadot-angular-identicon';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    PolkadotIdentIconModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

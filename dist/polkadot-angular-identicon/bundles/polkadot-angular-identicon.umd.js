@@ -18,6 +18,7 @@
     var RenderHelper = /** @class */ (function () {
         function RenderHelper() {
         }
+        /// Function that choose render function according to which parameters are passed
         RenderHelper.pickRenderFunction = function (address, theme, size) {
             if (size === void 0) { size = DEFAULT_SIZE; }
             if (address) {
@@ -36,28 +37,34 @@
                 return this.renderEmptyIdenticon(size);
             }
         };
+        /// function called when the polkadot theme is passed. This function renders the circle with a color
         RenderHelper.renderCircle = function (_a, key) {
             var cx = _a.cx, cy = _a.cy, fill = _a.fill, r = _a.r;
             var svg = "<svg viewBox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n                <circle cx=\"" + cx + "\"  cy=\"" + cy + "\" fill=\"" + fill + "\"  r=\"" + r + "\" />\n                </svg>";
             return svg;
         };
+        /// This function renders the polkadot identicon when the polkadot theme is passed
         RenderHelper.renderPolkadotIdenticon = function (address, className, isAlternative, size, style) {
             if (className === void 0) { className = ''; }
             if (isAlternative === void 0) { isAlternative = false; }
-            return "<svg\n              class=" + className + "\n              height=" + size + "\n              id=" + address + "\n              name=" + address + "\n              style=" + style + "\n              viewBox='0 0 64 64'\n              width=" + size + ">\n                    " + icons.polkadotIcon(address, { isAlternative: isAlternative })
-                .map(this.renderCircle) + "\n            </svg>";
+            return "<svg\n            height=" + size + "\n            viewBox='0 0 64 64'\n            width=" + size + ">\n            " + icons.polkadotIcon(address, { isAlternative: isAlternative }).map(this.renderCircle).join('') + "\n            </svg>";
         };
+        /// This function renders the beachball identicon when the beachball theme is passed
         RenderHelper.renderBeachballIdenticon = function (address, isAlternative, size) {
             if (isAlternative === void 0) { isAlternative = false; }
             var generatedBeachballIcon = icons.beachballIcon(address, { isAlternative: isAlternative, size: size });
             return generatedBeachballIcon.innerHTML;
         };
+        /// This empty identicon will be diplayed if a wrong Substrate address is passed
         RenderHelper.renderEmptyIdenticon = function (size) {
             return "<div>\n              <svg :height=\"size\" viewBox=\"0 0 64 64\" :width=\"size\" >\n                <circle cx=\"50%\" cy=\"50%\" fill=\"#eee\" r=\"50%\" />\n              </svg>\n            </div>";
         };
+        /// This function renders the jdenticon identicon when the jdenticon theme is passed
         RenderHelper.renderJidenticon = function (address, size) {
             return jdenticon.toSvg(address, size);
         };
+        /// This helper function picks the theme according to the passed parameters
+        ///
         RenderHelper.themeFilter = function (theme) {
             if (theme === THEMES_ENUM.POLKADOT || !theme) {
                 return THEMES_ENUM.POLKADOT;

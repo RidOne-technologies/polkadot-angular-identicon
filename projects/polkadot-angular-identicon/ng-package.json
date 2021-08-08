@@ -12,6 +12,8 @@
     "@polkadot/util",
     "@polkadot/util-crypto",
     "color",
-    "@angular/elements"
+    "@angular/elements",
+    "crypto-browserify",
+    "stream-browserify"
   ]
 }

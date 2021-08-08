@@ -16,6 +16,7 @@ var THEMES_ENUM;
 })(THEMES_ENUM || (THEMES_ENUM = {}));
 
 class RenderHelper {
+    /// Function that choose render function according to which parameters are passed
     static pickRenderFunction(address, theme, size = DEFAULT_SIZE) {
         if (address) {
             switch (theme) {
@@ -33,29 +34,28 @@ class RenderHelper {
             return this.renderEmptyIdenticon(size);
         }
     }
+    /// function called when the polkadot theme is passed. This function renders the circle with a color
     static renderCircle({ cx, cy, fill, r }, key) {
         let svg = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="${cx}"  cy="${cy}" fill="${fill}"  r="${r}" />
                 </svg>`;
         return svg;
     }
+    /// This function renders the polkadot identicon when the polkadot theme is passed
     static renderPolkadotIdenticon(address, className = '', isAlternative = false, size, style) {
         return `<svg
-              class=${className}
-              height=${size}
-              id=${address}
-              name=${address}
-              style=${style}
-              viewBox='0 0 64 64'
-              width=${size}>
-                    ${polkadotIcon(address, { isAlternative })
-            .map(this.renderCircle)}
+            height=${size}
+            viewBox='0 0 64 64'
+            width=${size}>
+            ${polkadotIcon(address, { isAlternative }).map(this.renderCircle).join('')}
             </svg>`;
     }
+    /// This function renders the beachball identicon when the beachball theme is passed
     static renderBeachballIdenticon(address, isAlternative = false, size) {
         let generatedBeachballIcon = beachballIcon(address, { isAlternative: isAlternative, size });
         return generatedBeachballIcon.innerHTML;
     }
+    /// This empty identicon will be diplayed if a wrong Substrate address is passed
     static renderEmptyIdenticon(size) {
         return `<div>
               <svg :height="size" viewBox="0 0 64 64" :width="size" >
@@ -63,9 +63,12 @@ class RenderHelper {
               </svg>
             </div>`;
     }
+    /// This function renders the jdenticon identicon when the jdenticon theme is passed
     static renderJidenticon(address, size) {
         return toSvg(address, size);
     }
+    /// This helper function picks the theme according to the passed parameters
+    ///
     static themeFilter(theme) {
         if (theme === THEMES_ENUM.POLKADOT || !theme) {
             return THEMES_ENUM.POLKADOT;
