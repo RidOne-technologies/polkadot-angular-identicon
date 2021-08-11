@@ -21,10 +21,10 @@ Run `ng build polkadot-angular-identicon --prod` to build the project. The build
 
 ![built files](documentation/assets/built-publish.png)
 
-At this point we have the built ready for publish and use.
+At this point we have generated files that we can be pulished to npm.
 
 
-## Testing
+## Unit Testing
 
 The testing framework that comes with angular is the Karma framework.
 
