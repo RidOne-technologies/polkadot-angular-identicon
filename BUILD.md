@@ -26,11 +26,21 @@ At this point we have generated files that we can be pulished to npm.
 
 ## Unit Testing
 
-The testing framework that comes with angular is the Karma framework.
+If you want to test the library, after cloning the `polkadtot-angular-identicon`.
 
-To run the tests just type `ng test` and it will test all test files with the `spec.ts` file extension.
+Open the project from your IDE.
 
-For this library it will be the `render-helper.spec.ts` file that contains the test cases.
+1) Open the IDE's terminal and type `npm i` to install the `polkadtot-angular-identicon` root project dependencies 
+2) open another terminal from the IDE and install the dependencies of the library itself under `projects` folder by `cd project/polkadot-angular-identicon` and type `npm i`
+
+At this step all the dependencies are installed.
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) wich comes with angular.
+
+*The business logic of this library is contained in the `render-helper.ts` file so unit tests of the business logic for this library is `render-helper.spec.ts`.*
+
+
+*Note that this `polkadot-web-identicon` is based on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
 
 **Note**
 
