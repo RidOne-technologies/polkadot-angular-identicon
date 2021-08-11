@@ -67,6 +67,17 @@ Open the `package.json` file and add at the following at the end before the clos
 
 open the `tsconfig.app.json` and add `"node"` to the `types` property under `compilerOptions` section
 
+```json
+{
+ ...
+  "compilerOptions": {
+     ...
+    "types": ["node"]
+  },
+...
+ }
+```
+
 open `tsconfig.json` and add at the end of the `compilerOptions` add the following
 
 ```json
