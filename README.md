@@ -28,13 +28,19 @@ In our case let's create a project called `pai` (like polkadot-angular-identicon
 Open the `pai` project we just created via your favorite IDE and from IDE's terminal and install the component
  `npm i polkadot-angular-identicon`.
 
+ ![Install package](documentation/assets/c1.png)
+
 After the package is installed open the `app.module.ts` file in the project under `src`  and add the `PolkadotIdentIconModule` into the `imports` section (this is the section were we import an angular module).
+
+See capture below.
+
+![import icon module](documentation/assets/c2.png)
 
 ***The `PolkadotIdentIconModule` can be also used in any other  angular feature module in the `imports` or `exports` section***.
 
 ## Usage of the component
 
-Now what we only have to do is to use the identicon in the template component of our linkings for instance in our `pai` project let's use it in the `app.component.html` file.
+Now what we only have to do is to use the identicon in the template component of our linkings for instance in our `pai` project we created, let's use it in the `app.component.html` file under `src/app` folder.
 
 Open the `app.component.html`file and remove it's content and past this line:
 
@@ -78,7 +84,7 @@ open the `tsconfig.app.json` and add `"node"` to the `types` property under `com
  }
 ```
 
-open `tsconfig.json` and add at the end of the `compilerOptions` add the following
+open `tsconfig.json`, at the end of the `compilerOptions` add the following
 
 ```json
     "paths": {
@@ -87,7 +93,7 @@ open `tsconfig.json` and add at the end of the `compilerOptions` add the followi
       }
 ```
 
-And one last thing open the `polyfills.ts` file under `src` and add the snippet below line at the end
+And one last thing open the `polyfills.ts` file under `src` and add the snippet below the end
 
 ```javascript
 (window as any).global = window;
@@ -101,22 +107,32 @@ To test the app run the command `ng serve` and open your browser at `localhost:4
 You can also type the command `ng serve -o` and it will automatically open the app in your default browser.
 
 ## Unit tests
+Clone the `polkadot-angular-identicon` library project from your IDE if not already done.
 
-If you want to test the library, after cloning the `polkadtot-angular-identicon`.
+1) Open the IDE's terminal and type `npm i` to install the  root project dependencies 
+2) open another terminal from the IDE to install the dependencies of the library itself which is under `projects` folder by navigating `cd project/polkadot-angular-identicon` and type `npm i`
 
-Open the project from your IDE.
+At this step all the dependencies are installed for :
 
-1) Open the IDE's terminal and type `npm i` to install the `polkadtot-angular-identicon` root project dependencies 
-2) open another terminal from the IDE and install the dependencies of the library itself under `projects` folder by `cd project/polkadot-angular-identicon` and type `npm i`
+- `polkadot-angular-identicon`
 
-At this step all the dependencies are installed.
+- `polkadot-angular-identicon/project/polkadot-angular-identicon`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) wich comes with angular.
+To run the test make sure we are under `polkadot-angular-identicon/project/polkadot-angular-identicon` and type
+ `ng test` command to run the unit tests (`Karma` test runner  and `jasmine` a javascript test framework installed by tdefault when creating the project).
+
+A browser automatically opened under `http://localhost:9876/?id=xxxxx` and the results of the tests executed are displayed.
+
+![import icon module](documentation/assets/c3.png)
+on the terminal side we can see
+
+![Test run](documentation/assets/c4.png)
+
+We might need to stop the test runner server on the terminal.
 
 *The business logic of this library is contained in the `render-helper.ts` file so unit tests of the business logic for this library is `render-helper.spec.ts`.*
 
-
-*Note that this `polkadot-web-identicon` is based on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
+*Also note that the `polkadot-web-identicon` is depends on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
 
 ## Hackers Guide
 

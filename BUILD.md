@@ -4,48 +4,57 @@ This guide show how the `polkadot-angular-identicon` is built for release.
 
 ## Building
 
-1) Install the Angular cli with `npm i -g @angular/cli`
+1) Make sure the angular cli is installed or install it with `npm i -g @angular/cli`
 
 2) Clone the project `polkadot-angular-identicon` and open it into your favorite IDE.
 
-4) Open the project with your IDE's
+3) Install the project's dependencies for
 
-3) Install the project's dependencies with `npm i`
-You can find also under projects the `polkadot-angular-identicon` project wich is the identicon component project
+- `polkadot-angular-identicon`
 
-4) From another terminal cd into `projects/polkadot-andular-identicon` and type `npm i` as well to install the component identicon project's the dependencies
+- `polkadot-angular-identicon/project/polkadot-angular-identicon`
+
+Under projects the `polkadot-angular-identicon` type `npm i`
+
+From another terminal cd into `projects/polkadot-andular-identicon` and type `npm i` as well to install the component identicon project's the dependencies
 
 At this point we can build the `polkadot-andular-identicon` component. We need to go back to the root **polkadot-angular-identicon** project in the terminal 
 
-Run `ng build polkadot-angular-identicon --prod` to build the project. The build artifacts will be stored in the `dist/` directory under the folder with the name `polkadot-angular-identicon`
+Run `ng build polkadot-angular-identicon --prod` to build the project. The built artifacts will be stored in the `dist/` directory under the folder with the name `polkadot-angular-identicon`
 
 ![built files](documentation/assets/built-publish.png)
 
 At this point we have generated files that we can be pulished to npm.
 
 
-## Unit Testing
+## Unit tests
+Clone the `polkadot-angular-identicon` library project from your IDE if not already done.
 
-If you want to test the library, after cloning the `polkadtot-angular-identicon`.
+1) Open the IDE's terminal and type `npm i` to install the  root project dependencies 
+2) open another terminal from the IDE to install the dependencies of the library itself which is under `projects` folder by navigating `cd project/polkadot-angular-identicon` and type `npm i`
 
-Open the project from your IDE.
+At this step all the dependencies are installed for :
 
-1) Open the IDE's terminal and type `npm i` to install the `polkadtot-angular-identicon` root project dependencies 
-2) open another terminal from the IDE and install the dependencies of the library itself under `projects` folder by `cd project/polkadot-angular-identicon` and type `npm i`
+- `polkadot-angular-identicon`
 
-At this step all the dependencies are installed.
+- `polkadot-angular-identicon/project/polkadot-angular-identicon`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) wich comes with angular.
+To run the test make sure we are under `polkadot-angular-identicon/project/polkadot-angular-identicon` and type
+ `ng test` command to run the unit tests (`Karma` test runner  and `jasmine` a javascript test framework installed by tdefault when creating the project).
+
+A browser automatically opened under `http://localhost:9876/?id=xxxxx` and the results of the tests executed are displayed.
+
+![import icon module](documentation/assets/c3.png)
+on the terminal side we can see
+
+![Test run](documentation/assets/c4.png)
+
+We might need to stop the test runner server on the terminal.
 
 *The business logic of this library is contained in the `render-helper.ts` file so unit tests of the business logic for this library is `render-helper.spec.ts`.*
 
-
-*Note that this `polkadot-web-identicon` is based on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
-
-**Note**
-
-This `polkadot-web-identicon` project is based on this project
-
+*Also note that the `polkadot-web-identicon` is depends on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
+ 
 ## Good to know ⚠️
 
 Angular is a typescript based framework.
