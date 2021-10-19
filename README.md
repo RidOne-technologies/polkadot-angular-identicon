@@ -130,6 +130,8 @@ on the terminal side we can see
 
 We might need to stop the test runner server on the terminal.
 
+*⚠️If the chrome browser for the test is not automatically opened, open a tab and navigate to `http://localhost:9876`  and press the `DEBUB` button*
+
 *The business logic of this library is contained in the `render-helper.ts` file so unit tests of the business logic for this library is `render-helper.spec.ts`.*
 
 *Also note that the `polkadot-web-identicon` is depends on the `polkadot-angular-identicon` component so they share the same business logic in the `render-helper.ts` then the same unit tests.*
